@@ -705,6 +705,43 @@ html[dir="rtl"] .ws-send-ic{transform:scaleX(-1)}
 .ok-close:hover{border-color:var(--signal-deep);color:var(--signal)}
 @media (prefers-reduced-motion:reduce){.ok-ic,.ok-ic path{animation:none !important;transform:none;opacity:1;stroke-dashoffset:0}}
 
+
+/* ---------- تحسين نموذج الطلب على الجوال ---------- */
+.ws-ctl::placeholder{color:color-mix(in srgb,var(--ink-2) 62%,transparent);opacity:1}
+.ws-ctl{scroll-margin-top:96px}
+.wa-float{transition:transform .22s ease,box-shadow .22s ease,opacity .2s ease}
+@media (max-width:720px){
+  body.ws-typing .wa-float{opacity:0;pointer-events:none;transform:translateY(12px)}
+}
+@media (max-width:700px){
+  .ws-in{padding:56px 16px 72px}
+  .ws-sec .sec-head{margin-bottom:26px}
+  .ws-sub{font-size:.9rem;line-height:1.85}
+  .ws-pk{gap:12px;margin-bottom:22px}
+  .ws-req{display:flex;flex-direction:column;gap:20px;padding:0;border:0;border-radius:0;background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
+  .ws-copy{text-align:center}
+  .ws-copy h3{font-size:1.4rem;margin-bottom:8px}
+  .ws-copy > p{margin:0 auto 18px;font-size:.9rem;line-height:1.85}
+  .ws-list{gap:10px;margin:0 auto;max-width:300px;text-align:start}
+  .ws-list li{font-size:.86rem}
+  .ws-flow{display:none}
+  .ws-form{padding:22px 16px 18px;gap:18px;border-radius:20px;border-color:var(--line-soft);background:var(--panel);box-shadow:0 14px 40px rgba(0,0,0,.18)}
+  .ws-f{gap:9px}
+  .ws-f > label,.ws-lbl{font-size:.86rem}
+  .ws-ctl{min-height:52px;padding:12px 15px;border-radius:13px;font-size:16px}
+  textarea.ws-ctl{min-height:136px;line-height:1.8}
+  .ws-sel select{padding-inline-end:44px}
+  .ws-file{flex-direction:column;align-items:stretch;gap:10px;padding:12px;text-align:center}
+  .ws-file-btn{width:100%;min-height:46px;justify-content:center;font-size:.88rem}
+  .ws-file-sum{font-size:.8rem}
+  .ws-hint{text-align:center;font-size:.72rem}
+  .ws-fchip b{max-width:46vw}
+  .ws-actions{margin-top:4px;gap:10px}
+  .ws-actions .btn{min-height:54px;border-radius:13px;font-size:1rem}
+  .ws-status{font-size:.82rem}
+  .ws-note{margin-top:18px;font-size:.74rem;padding-inline:6px}
+}
+
 /* ---------- الشهادات ---------- */
 .certs-sec{border-top:1px solid var(--line)}
 .certs-in{max-width:1204px;margin:0 auto;padding:88px 22px 110px}
@@ -1924,15 +1961,15 @@ html[dir="rtl"] .wa-float{flex-direction:row-reverse}
         <form class="ws-form" id="ws-form" novalidate autocomplete="on">
           <div class="ws-f">
             <label for="ws-name" data-ar="الاسم" data-en="Name">الاسم</label>
-            <input class="ws-ctl" id="ws-name" name="name" type="text" autocomplete="name" maxlength="80" required data-ar-ph="اسمك الكامل" data-en-ph="Your full name" placeholder="اسمك الكامل">
+            <input class="ws-ctl" id="ws-name" name="name" type="text" enterkeyhint="next" autocomplete="name" maxlength="80" required data-ar-ph="اسمك الكامل" data-en-ph="Your full name" placeholder="اسمك الكامل">
           </div>
           <div class="ws-f">
             <label for="ws-email" data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</label>
-            <input class="ws-ctl ws-ltr" id="ws-email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="120" required placeholder="name@example.com">
+            <input class="ws-ctl ws-ltr" id="ws-email" name="email" type="email" enterkeyhint="next" autocapitalize="none" autocorrect="off" spellcheck="false" inputmode="email" autocomplete="email" maxlength="120" required placeholder="name@example.com">
           </div>
           <div class="ws-f">
             <label for="ws-phone"><span data-ar="رقم الجوال / واتساب" data-en="Phone / WhatsApp">رقم الجوال / واتساب</span> <span class="ws-opt" data-ar="(اختياري)" data-en="(optional)">(اختياري)</span></label>
-            <input class="ws-ctl ws-ltr" id="ws-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="24" data-ar-ph="الرقم مع رمز الدولة" data-en-ph="Number with country code" placeholder="الرقم مع رمز الدولة">
+            <input class="ws-ctl ws-ltr" id="ws-phone" name="phone" type="tel" enterkeyhint="next" inputmode="tel" autocomplete="tel" maxlength="24" data-ar-ph="الرقم مع رمز الدولة" data-en-ph="Number with country code" placeholder="الرقم مع رمز الدولة">
           </div>
           <div class="ws-f">
             <label for="ws-service" data-ar="الخدمة المطلوبة" data-en="Service needed">الخدمة المطلوبة</label>
@@ -3173,6 +3210,14 @@ html[dir="rtl"] .wa-float{flex-direction:row-reverse}
     sending = on; submitBtn.disabled = on; submitBtn.classList.toggle("busy", on);
     document.getElementById("ws-submit-t").textContent = T[lang()][on ? "sending" : "send"];
   }
+
+  /* إخفاء زر واتساب العائم أثناء الكتابة في النموذج (الجوال) */
+  var typTimer = null;
+  form.addEventListener("focusin", function(){ clearTimeout(typTimer); document.body.classList.add("ws-typing"); });
+  form.addEventListener("focusout", function(){
+    clearTimeout(typTimer);
+    typTimer = setTimeout(function(){ if(!form.contains(document.activeElement)) document.body.classList.remove("ws-typing"); }, 150);
+  });
   var okOv = document.getElementById("ws-ok"), okP = document.getElementById("ws-ok-p"), okLast = null;
   function openOk(){
     okLast = document.activeElement;
