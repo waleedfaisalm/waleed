@@ -115,6 +115,19 @@ a{color:inherit;text-decoration:none}
 }
 .icon-btn:hover{color:var(--signal);border-color:var(--signal-deep)}
 
+
+/* زر تصميم المواقع في الشريط العلوي */
+.nav a.nav-cta,.nav a.nav-cta.on{
+  margin-inline-start:6px;padding:8px 18px;border-radius:9px;
+  background:var(--signal);color:#04161A;font-weight:700;
+  box-shadow:0 6px 18px color-mix(in srgb,var(--signal) 28%,transparent);
+  transition:filter .18s,transform .18s,box-shadow .18s;
+}
+.nav a.nav-cta:hover{background:var(--signal);color:#04161A;filter:brightness(1.08);transform:translateY(-1px);box-shadow:0 9px 22px color-mix(in srgb,var(--signal) 40%,transparent)}
+@media (max-width:980px){
+  .nav a.nav-cta,.nav a.nav-cta.on{margin:10px 0 0;padding:12px 34px;border-radius:11px}
+}
+
 /* ---------- البطل ---------- */
 .hero{
   max-width:1360px;margin:0 auto;padding:34px 22px 70px;
@@ -1452,11 +1465,11 @@ html[dir="rtl"] .wa-float{flex-direction:row-reverse}
       <a href="#skills" data-ar="المهارات" data-en="Skills">المهارات</a>
       <a href="#exp" data-ar="الخبرة" data-en="Experience">الخبرة</a>
       <a href="#work" data-ar="المشاريع" data-en="Projects">المشاريع</a>
-      <a href="#webdesign" data-ar="تصميم المواقع" data-en="Web Design">تصميم المواقع</a>
       <a href="#certs" data-ar="الشهادات" data-en="Certifications">الشهادات</a>
       <a href="#ts" data-ar="استكشاف الأعطال" data-en="Troubleshooting">استكشاف الأعطال</a>
       <a href="#edu" data-ar="التعليم" data-en="Education">التعليم</a>
       <a href="#contact" data-ar="تواصل معي" data-en="Contact">تواصل معي</a>
+      <a class="nav-cta" href="#webdesign" data-ar="اطلب موقعك" data-en="Get Your Website">اطلب موقعك</a>
     </nav>
 
     <button class="menu-btn icon-btn" id="menu-btn" type="button" aria-label="القائمة" aria-expanded="false" aria-controls="nav">
