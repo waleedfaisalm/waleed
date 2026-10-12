@@ -482,6 +482,229 @@ html[dir="ltr"] .tl-list li::after{content:"›"}
   .work-in{padding:64px 22px 80px}
 }
 
+/* ---------- خدمة تصميم المواقع ---------- */
+.ws-sec{border-top:1px solid var(--line);--ws-field:var(--bg-2)}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]) .ws-sec{--ws-field:#FFFFFF}}
+:root[data-theme="light"] .ws-sec{--ws-field:#FFFFFF}
+.ws-in{max-width:1120px;margin:0 auto;padding:80px 22px 96px}
+.ws-sec .sec-head{margin-bottom:40px}
+.ws-sub{max-width:70ch;margin:16px auto 0;color:var(--ink-2);font-size:.95rem;line-height:1.9}
+
+.ws-pk{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:14px}
+.ws-card{
+  position:relative;display:flex;flex-direction:column;gap:12px;
+  border:1px solid var(--line);border-radius:14px;background:var(--panel);
+  padding:24px 24px 20px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  transition:border-color .2s, transform .2s, box-shadow .2s;
+}
+.ws-card::before{
+  content:"";position:absolute;top:0;inset-inline-start:24px;width:56px;height:2px;
+  background:var(--signal);border-radius:2px;
+}
+.ws-card:hover{border-color:var(--signal-deep);transform:translateY(-2px)}
+.ws-card.is-main{
+  border-color:var(--signal-deep);
+  box-shadow:0 0 0 1px color-mix(in srgb,var(--signal) 20%,transparent),0 16px 42px var(--glow);
+}
+.ws-card-top{display:flex;align-items:center;gap:13px}
+.ws-ic{
+  flex:none;width:42px;height:42px;display:grid;place-items:center;border-radius:11px;
+  border:1px solid var(--line-soft);background:var(--chip);color:var(--signal);
+}
+.ws-ic svg{width:20px;height:20px}
+.ws-card h3{margin:0;font-size:1.08rem;font-weight:700;color:var(--ink);line-height:1.4}
+.ws-card p{margin:0;color:var(--ink-2);font-size:.88rem;line-height:1.9}
+.ws-card-foot{
+  margin-top:auto;padding-top:16px;border-top:1px dashed var(--line);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+}
+.ws-price{font-size:.8rem;color:var(--ink-3)}
+
+.ws-req{
+  display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:36px;align-items:start;
+  border:1px solid var(--line);border-radius:18px;background:var(--panel);padding:32px;
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+}
+.ws-copy{padding-top:6px}
+.ws-copy .eyebrow{margin-bottom:12px}
+.ws-copy h3{margin:0 0 12px;font-size:clamp(1.45rem,2.7vw,1.9rem);font-weight:700;letter-spacing:-.01em;line-height:1.35}
+.ws-copy > p{margin:0 0 24px;color:var(--ink-2);font-size:.93rem;line-height:1.95;max-width:44ch}
+.ws-list{list-style:none;margin:0 0 26px;padding:0;display:grid;gap:13px}
+.ws-list li{display:flex;align-items:center;gap:11px;color:var(--ink);font-size:.9rem}
+.ws-list svg{flex:none;width:18px;height:18px;color:var(--signal)}
+.ws-flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.ws-flow span{
+  padding:6px 13px;border:1px solid var(--line);border-radius:999px;
+  background:var(--ws-field);font-size:.76rem;color:var(--ink-2);
+}
+.ws-flow i{font-style:normal;color:var(--ink-3);font-size:.8rem}
+html[dir="ltr"] .ws-flow i{display:inline-block;transform:scaleX(-1)}
+
+.ws-form{
+  position:relative;display:grid;grid-template-columns:1fr 1fr;gap:18px 14px;
+  border:1px solid var(--line);border-radius:14px;
+  background:color-mix(in srgb,var(--bg) 55%,transparent);padding:22px;
+}
+.ws-f{display:flex;flex-direction:column;gap:8px;min-width:0}
+.ws-f.full{grid-column:1/-1}
+.ws-f > label,.ws-lbl{font-size:.8rem;font-weight:600;color:var(--ink)}
+.ws-opt{color:var(--ink-3);font-weight:400}
+.ws-ctl{
+  width:100%;min-height:46px;font:inherit;font-size:.92rem;color:var(--ink);
+  background:var(--ws-field);border:1px solid var(--line);border-radius:11px;
+  padding:11px 14px;transition:border-color .18s, box-shadow .18s;
+}
+.ws-ctl::placeholder{color:var(--ink-3);opacity:1}
+.ws-ctl:focus{outline:none;border-color:var(--signal);box-shadow:0 0 0 3px color-mix(in srgb,var(--signal) 18%,transparent)}
+.ws-ctl[aria-invalid="true"]{border-color:var(--alert);box-shadow:0 0 0 3px color-mix(in srgb,var(--alert) 16%,transparent)}
+textarea.ws-ctl{min-height:150px;resize:vertical;line-height:1.85}
+input.ws-ltr{direction:ltr;text-align:start}
+html[dir="rtl"] input.ws-ltr:placeholder-shown{text-align:right}
+.ws-sel{position:relative}
+.ws-sel select{appearance:none;-webkit-appearance:none;padding-inline-end:40px;cursor:pointer}
+.ws-sel select:invalid{color:var(--ink-3)}
+.ws-sel option{background:var(--bg-2);color:var(--ink)}
+.ws-sel svg{
+  position:absolute;top:50%;inset-inline-end:14px;width:16px;height:16px;margin-top:-8px;
+  color:var(--ink-3);pointer-events:none;
+}
+
+.ws-file{
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;position:relative;
+  border:1px dashed var(--line);border-radius:11px;background:var(--ws-field);padding:9px 12px;
+  transition:border-color .18s, background .18s;
+}
+.ws-file.drag{border-color:var(--signal);background:var(--chip)}
+.ws-file input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.ws-file-btn{
+  display:inline-flex;align-items:center;gap:8px;cursor:pointer;
+  padding:9px 16px;border-radius:999px;font-size:.8rem;font-weight:600;
+  border:1px solid var(--line-soft);background:var(--chip);color:var(--signal);transition:.18s;
+}
+.ws-file-btn:hover{border-color:var(--signal);background:var(--signal);color:#04161A}
+.ws-file-btn svg{width:15px;height:15px}
+.ws-file input:focus-visible + .ws-file-btn{outline:2px solid var(--signal);outline-offset:3px}
+.ws-file-sum{font-size:.84rem;color:var(--ink-3)}
+.ws-files{display:flex;flex-wrap:wrap;gap:8px}
+.ws-files:empty{display:none}
+.ws-fchip{
+  display:inline-flex;align-items:center;gap:8px;max-width:100%;
+  padding:4px 5px 4px 12px;border:1px solid var(--line);border-radius:999px;
+  background:var(--ws-field);font-size:.75rem;color:var(--ink-2);
+}
+html[dir="rtl"] .ws-fchip{padding:4px 12px 4px 5px}
+.ws-fchip b{
+  font-weight:500;max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  direction:ltr;unicode-bidi:plaintext;
+}
+.ws-fchip em{font-style:normal;color:var(--ink-3);font-size:.7rem;unicode-bidi:isolate}
+.ws-fchip button{
+  appearance:none;border:0;cursor:pointer;width:22px;height:22px;border-radius:50%;
+  display:grid;place-items:center;background:var(--chip);color:var(--ink-2);transition:.18s;
+}
+.ws-fchip button:hover{background:var(--alert);color:#04161A}
+.ws-fchip button svg{width:11px;height:11px}
+.ws-hint{font-size:.72rem;color:var(--ink-3);line-height:1.7}
+
+.ws-actions{grid-column:1/-1;display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:2px}
+.ws-actions .btn{min-height:48px;padding:12px 26px}
+.ws-actions .btn[disabled]{opacity:.7;cursor:progress;transform:none;filter:none}
+.ws-send-ic{width:17px;height:17px}
+html[dir="rtl"] .ws-send-ic{transform:scaleX(-1)}
+.ws-spin{
+  width:17px;height:17px;border-radius:50%;border:2px solid currentColor;border-top-color:transparent;
+  animation:wsSpin .7s linear infinite;display:none;
+}
+.ws-actions .btn.busy .ws-spin{display:inline-block}
+.ws-actions .btn.busy .ws-send-ic{display:none}
+@keyframes wsSpin{to{transform:rotate(360deg)}}
+.ws-status{flex:1;min-width:180px;font-size:.84rem;line-height:1.7;color:var(--ink-2)}
+.ws-status.err{color:var(--alert)}
+.ws-status.ok{color:var(--ok)}
+.ws-wa{
+  appearance:none;border:0;background:none;cursor:pointer;font:inherit;font-weight:600;
+  color:var(--signal);text-decoration:underline;text-underline-offset:3px;padding:0;margin-inline-start:6px;
+}
+.ws-hp{position:absolute !important;inset-inline-start:0;top:0;width:1px;height:1px;margin:-1px;overflow:hidden;clip-path:inset(50%);opacity:0;pointer-events:none}
+
+.ws-done{
+  border:1px solid var(--line);border-radius:14px;
+  background:color-mix(in srgb,var(--bg) 55%,transparent);
+  padding:48px 24px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px;
+}
+.ws-done[hidden],.ws-form[hidden]{display:none}
+.ws-done-ic{
+  width:60px;height:60px;border-radius:50%;display:grid;place-items:center;
+  color:var(--ok);border:1px solid color-mix(in srgb,var(--ok) 45%,transparent);
+  background:color-mix(in srgb,var(--ok) 12%,transparent);
+  box-shadow:0 0 34px color-mix(in srgb,var(--ok) 22%,transparent);
+}
+.ws-done-ic svg{width:28px;height:28px}
+.ws-done h4{margin:6px 0 0;font-size:1.25rem;font-weight:700}
+.ws-done p{margin:0;max-width:40ch;color:var(--ink-2);font-size:.92rem;line-height:1.9}
+.ws-done .btn{margin-top:10px}
+.ws-note{margin:22px 0 0;text-align:center;color:var(--ink-3);font-size:.78rem;line-height:1.8}
+
+@media (max-width:900px){
+  .ws-req{grid-template-columns:1fr;gap:28px;padding:24px 18px}
+  .ws-copy{padding-top:0}
+  .ws-copy > p{max-width:none}
+}
+@media (max-width:700px){
+  .ws-in{padding:64px 18px 80px}
+  .ws-pk{grid-template-columns:1fr}
+  .ws-card{padding:22px 20px 18px}
+  .ws-form{grid-template-columns:1fr;padding:16px;gap:16px}
+  .ws-ctl{font-size:16px}
+  textarea.ws-ctl{min-height:140px}
+  .ws-actions{flex-direction:column;align-items:stretch;gap:12px}
+  .ws-actions .btn{width:100%;justify-content:center}
+  .ws-status{min-width:0;text-align:center}
+  .ws-done{padding:38px 18px}
+}
+@media (prefers-reduced-motion:reduce){.ws-spin{animation-duration:1.6s}.ws-card:hover{transform:none}}
+
+
+/* ---------- نافذة نجاح الإرسال ---------- */
+.ok-overlay{
+  position:fixed;inset:0;z-index:230;display:flex;align-items:center;justify-content:center;padding:18px;
+  background:rgba(3,10,14,.72);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
+  opacity:0;pointer-events:none;transition:opacity .22s ease;
+}
+.ok-overlay.open{opacity:1;pointer-events:auto}
+.ok-box{
+  position:relative;width:100%;max-width:440px;text-align:center;
+  padding:46px 28px 30px;border-radius:24px;border:1px solid var(--line-soft);
+  background:var(--bg-2);box-shadow:0 28px 70px rgba(0,0,0,.55),0 0 0 1px color-mix(in srgb,var(--signal) 8%,transparent);
+  transform:translateY(14px) scale(.97);transition:transform .26s ease;
+}
+.ok-overlay.open .ok-box{transform:none}
+.ok-x{
+  position:absolute;top:14px;inset-inline-start:14px;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;
+  border:1px solid var(--line);background:var(--panel);color:var(--ink-2);cursor:pointer;transition:.16s;
+}
+.ok-x:hover{color:var(--ink);border-color:var(--signal-deep)}
+.ok-x svg{width:16px;height:16px}
+.ok-ic{
+  width:104px;height:104px;margin:6px auto 22px;border-radius:50%;display:grid;place-items:center;
+  background:var(--ok);color:#04161A;box-shadow:0 0 0 10px color-mix(in srgb,var(--ok) 14%,transparent),0 0 44px color-mix(in srgb,var(--ok) 30%,transparent);
+  transform:scale(.6);opacity:0;
+}
+.ok-overlay.open .ok-ic{animation:okPop .5s .08s cubic-bezier(.2,1.3,.4,1) forwards}
+@keyframes okPop{to{transform:scale(1);opacity:1}}
+.ok-ic svg{width:52px;height:52px}
+.ok-ic path{stroke-dasharray:40;stroke-dashoffset:40}
+.ok-overlay.open .ok-ic path{animation:okDraw .45s .4s ease forwards}
+@keyframes okDraw{to{stroke-dashoffset:0}}
+.ok-box h3{margin:0 0 14px;font-size:1.45rem;font-weight:800;color:var(--ink)}
+.ok-box p{margin:0 auto 26px;max-width:32ch;color:var(--ink-2);font-size:.98rem;line-height:2}
+.ok-close{
+  min-width:130px;padding:13px 30px;border-radius:12px;border:1px solid var(--line);background:var(--panel);
+  color:var(--ink);font:inherit;font-weight:700;font-size:.95rem;cursor:pointer;transition:.18s;
+}
+.ok-close:hover{border-color:var(--signal-deep);color:var(--signal)}
+@media (prefers-reduced-motion:reduce){.ok-ic,.ok-ic path{animation:none !important;transform:none;opacity:1;stroke-dashoffset:0}}
+
 /* ---------- الشهادات ---------- */
 .certs-sec{border-top:1px solid var(--line)}
 .certs-in{max-width:1204px;margin:0 auto;padding:88px 22px 110px}
@@ -1192,6 +1415,7 @@ html[dir="rtl"] .wa-float{flex-direction:row-reverse}
       <a href="#skills" data-ar="المهارات" data-en="Skills">المهارات</a>
       <a href="#exp" data-ar="الخبرة" data-en="Experience">الخبرة</a>
       <a href="#work" data-ar="المشاريع" data-en="Projects">المشاريع</a>
+      <a href="#webdesign" data-ar="تصميم المواقع" data-en="Web Design">تصميم المواقع</a>
       <a href="#certs" data-ar="الشهادات" data-en="Certifications">الشهادات</a>
       <a href="#ts" data-ar="استكشاف الأعطال" data-en="Troubleshooting">استكشاف الأعطال</a>
       <a href="#edu" data-ar="التعليم" data-en="Education">التعليم</a>
@@ -1638,6 +1862,132 @@ html[dir="rtl"] .wa-float{flex-direction:row-reverse}
      
 </section>
 
+<section class="ws-sec" id="webdesign">
+  <div class="ws-in">
+    <div class="sec-head">
+      <span class="eyebrow" data-ar="خدمة تصميم المواقع" data-en="Web Design Service">خدمة تصميم المواقع</span>
+      <h2 data-ar="موقعك الشخصي بتصميم احترافي" data-en="Your Personal Website, Professionally Designed">موقعك الشخصي بتصميم احترافي</h2>
+      <p class="ws-sub" data-ar="تصميم مواقع شخصية مع إمكانية إضافة شعار مخصص، بما يتناسب مع احتياجك وحجم المشروع."
+         data-en="Personal websites with an optional custom logo, tailored to your needs and the scope of your project.">تصميم مواقع شخصية مع إمكانية إضافة شعار مخصص، بما يتناسب مع احتياجك وحجم المشروع.</p>
+    </div>
+
+    <div class="ws-pk">
+      <article class="ws-card is-main">
+        <div class="ws-card-top">
+          <span class="ws-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="2.2"/><path d="M3 9h18"/><path d="M7 13h6M7 16h9"/></svg>
+          </span>
+          <h3 data-ar="موقع شخصي" data-en="Personal Website">موقع شخصي</h3>
+        </div>
+        <p data-ar="موقع شخصي متكامل بأقسام مصممة حسب نبذتك وأعمالك ومشاريعك ووسائل التواصل المطلوبة."
+           data-en="A complete personal website with sections built around your profile, work, projects and the contact channels you need.">موقع شخصي متكامل بأقسام مصممة حسب نبذتك وأعمالك ومشاريعك ووسائل التواصل المطلوبة.</p>
+        <div class="ws-card-foot">
+          <span class="ws-price" data-ar="السعر يعتمد على حجم المشروع والجهد المطلوب" data-en="Price depends on project size and effort required">السعر يعتمد على حجم المشروع والجهد المطلوب</span>
+        </div>
+      </article>
+
+      <article class="ws-card">
+        <div class="ws-card-top">
+          <span class="ws-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="2.2"/><path d="M3 9h18"/><path d="M7 13.5h3"/><path d="m15.6 11.2.9 2 2 .9-2 .9-.9 2-.9-2-2-.9 2-.9Z"/></svg>
+          </span>
+          <h3 data-ar="موقع شخصي + شعار" data-en="Personal Website + Logo">موقع شخصي + شعار</h3>
+        </div>
+        <p data-ar="موقع شخصي متكامل مع تصميم شعار مخصص ومناسب لهويتك الرقمية."
+           data-en="A complete personal website together with a custom logo that fits your digital identity.">موقع شخصي متكامل مع تصميم شعار مخصص ومناسب لهويتك الرقمية.</p>
+        <div class="ws-card-foot">
+          <span class="ws-price" data-ar="السعر يعتمد على حجم المشروع والجهد المطلوب" data-en="Price depends on project size and effort required">السعر يعتمد على حجم المشروع والجهد المطلوب</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="ws-req">
+      <div class="ws-copy">
+        <span class="eyebrow" data-ar="اطلب خدمتك" data-en="Request a service">اطلب خدمتك</span>
+        <h3 data-ar="أرسل لي تفاصيل فكرتك" data-en="Send me your idea in detail">أرسل لي تفاصيل فكرتك</h3>
+        <p data-ar="عبّئ بياناتك وتفاصيل المشروع، وسيصل الطلب مباشرة إلى بريدي الإلكتروني بشكل مرتب."
+           data-en="Fill in your details and project brief — the request lands straight in my inbox, neatly organised.">عبّئ بياناتك وتفاصيل المشروع، وسيصل الطلب مباشرة إلى بريدي الإلكتروني بشكل مرتب.</p>
+        <ul class="ws-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span data-ar="تصميم متجاوب مع الجوال والكمبيوتر" data-en="Responsive on mobile and desktop">تصميم متجاوب مع الجوال والكمبيوتر</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span data-ar="دعم العربية والإنجليزية عند الحاجة" data-en="Arabic and English support when needed">دعم العربية والإنجليزية عند الحاجة</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span data-ar="إمكانية تصميم شعار بسيط" data-en="Simple logo design available">إمكانية تصميم شعار بسيط</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span data-ar="اتفاق واضح على التفاصيل قبل البدء" data-en="Clear agreement on details before starting">اتفاق واضح على التفاصيل قبل البدء</span></li>
+        </ul>
+        <div class="ws-flow" aria-hidden="true">
+          <span data-ar="أرسل طلبك" data-en="Send request">أرسل طلبك</span><i>←</i>
+          <span data-ar="أراجع التفاصيل" data-en="I review it">أراجع التفاصيل</span><i>←</i>
+          <span data-ar="أتواصل معك" data-en="I contact you">أتواصل معك</span>
+        </div>
+      </div>
+
+      <div class="ws-formwrap">
+        <form class="ws-form" id="ws-form" novalidate autocomplete="on">
+          <div class="ws-f">
+            <label for="ws-name" data-ar="الاسم" data-en="Name">الاسم</label>
+            <input class="ws-ctl" id="ws-name" name="name" type="text" autocomplete="name" maxlength="80" required data-ar-ph="اسمك الكامل" data-en-ph="Your full name" placeholder="اسمك الكامل">
+          </div>
+          <div class="ws-f">
+            <label for="ws-email" data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</label>
+            <input class="ws-ctl ws-ltr" id="ws-email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="120" required placeholder="name@example.com">
+          </div>
+          <div class="ws-f">
+            <label for="ws-phone"><span data-ar="رقم الجوال / واتساب" data-en="Phone / WhatsApp">رقم الجوال / واتساب</span> <span class="ws-opt" data-ar="(اختياري)" data-en="(optional)">(اختياري)</span></label>
+            <input class="ws-ctl ws-ltr" id="ws-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="24" data-ar-ph="الرقم مع رمز الدولة" data-en-ph="Number with country code" placeholder="الرقم مع رمز الدولة">
+          </div>
+          <div class="ws-f">
+            <label for="ws-service" data-ar="الخدمة المطلوبة" data-en="Service needed">الخدمة المطلوبة</label>
+            <div class="ws-sel">
+              <select class="ws-ctl" id="ws-service" name="service" required>
+                <option value="" disabled selected data-ar="اختر الخدمة" data-en="Choose a service">اختر الخدمة</option>
+                <option value="personal" data-ar="موقع شخصي" data-en="Personal website">موقع شخصي</option>
+                <option value="personal-logo" data-ar="موقع شخصي + شعار" data-en="Personal website + logo">موقع شخصي + شعار</option>
+              </select>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </div>
+          </div>
+          <div class="ws-f full">
+            <label for="ws-details" data-ar="تفاصيل المشروع" data-en="Project details">تفاصيل المشروع</label>
+            <textarea class="ws-ctl" id="ws-details" name="details" maxlength="4000" required data-ar-ph="اكتب فكرة الموقع، الأقسام المطلوبة، الألوان، أمثلة تعجبك، وأي متطلبات إضافية." data-en-ph="Describe the site idea, the sections you need, colours, examples you like, and any extra requirements." placeholder="اكتب فكرة الموقع، الأقسام المطلوبة، الألوان، أمثلة تعجبك، وأي متطلبات إضافية."></textarea>
+          </div>
+          <div class="ws-f full">
+            <span class="ws-lbl"><span data-ar="المرفقات" data-en="Attachments">المرفقات</span> <span class="ws-opt" data-ar="(اختياري)" data-en="(optional)">(اختياري)</span></span>
+            <div class="ws-file" id="ws-drop">
+              <input id="ws-files" type="file" multiple accept="image/*,.pdf,.doc,.docx,.ppt,.pptx,.txt,.zip">
+              <label class="ws-file-btn" for="ws-files">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M5 20h14"/></svg>
+                <span data-ar="اختيار الملفات" data-en="Choose files">اختيار الملفات</span>
+              </label>
+              <span class="ws-file-sum" id="ws-file-sum">لم يتم اختيار ملفات</span>
+            </div>
+            <div class="ws-files" id="ws-files-list"></div>
+            <span class="ws-hint" data-ar="يمكنك إرفاق حتى 5 ملفات، بحد أقصى إجمالي 5 ميجابايت." data-en="You can attach up to 5 files, 5 MB in total.">يمكنك إرفاق حتى 5 ملفات، بحد أقصى إجمالي 5 ميجابايت.</span>
+          </div>
+
+          <div class="ws-hp" aria-hidden="true"><label>Leave this empty <input type="text" id="ws-hp" name="_honey" tabindex="-1" autocomplete="off"></label></div>
+
+          <div class="ws-actions">
+            <button class="btn btn-a" id="ws-submit" type="submit">
+              <svg class="ws-send-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3 10.5 13.5M21 3l-6.5 18-4-7.5L3 9.5 21 3Z"/></svg>
+              <span class="ws-spin" aria-hidden="true"></span>
+              <span id="ws-submit-t" data-ar="إرسال الطلب" data-en="Send request">إرسال الطلب</span>
+            </button>
+            <div class="ws-status" id="ws-status" role="status" aria-live="polite"></div>
+          </div>
+        </form>
+
+        <div class="ws-done" id="ws-done" hidden tabindex="-1">
+          <span class="ws-done-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.2 4.2L19 7"/></svg></span>
+          <h4 data-ar="تم إرسال طلبك بنجاح" data-en="Your request was sent">تم إرسال طلبك بنجاح</h4>
+          <p id="ws-done-p">شكراً لك! وصلني طلبك وسأراجع التفاصيل وأتواصل معك قريباً.</p>
+          <button class="btn btn-b" id="ws-again" type="button" data-ar="إرسال طلب آخر" data-en="Send another request">إرسال طلب آخر</button>
+        </div>
+      </div>
+    </div>
+
+    <p class="ws-note" data-ar="يتم تحديد السعر بعد مراجعة حجم المشروع والمتطلبات والجهد اللازم لتنفيذه." data-en="The price is set after reviewing the project size, requirements and the effort needed to build it.">يتم تحديد السعر بعد مراجعة حجم المشروع والمتطلبات والجهد اللازم لتنفيذه.</p>
+  </div>
+</section>
+
 <section class="certs-sec" id="certs">
   <div class="certs-in">
     <div class="sec-head">
@@ -1892,6 +2242,17 @@ html[dir="rtl"] .wa-float{flex-direction:row-reverse}
     </div>
   </div>
 </section>
+
+<!-- نافذة نجاح إرسال الطلب -->
+<div class="ok-overlay" id="ws-ok" aria-hidden="true">
+  <div class="ok-box" role="dialog" aria-modal="true" aria-labelledby="ws-ok-title">
+    <button type="button" class="ok-x" id="ws-ok-x" aria-label="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="ok-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.2 4.2L19 7"/></svg></div>
+    <h3 id="ws-ok-title" data-ar="تم استلام طلبك!" data-en="Request received!">تم استلام طلبك!</h3>
+    <p id="ws-ok-p"></p>
+    <button type="button" class="ok-close" id="ws-ok-close" data-ar="إغلاق" data-en="Close">إغلاق</button>
+  </div>
+</div>
 
 <!-- نافذة عرض الشهادة -->
 <div class="cm-overlay" id="cm" aria-hidden="true">
@@ -2597,5 +2958,280 @@ html[dir="rtl"] .wa-float{flex-direction:row-reverse}
   });
 })();
 </script>
+<script>
+/* ============ نموذج طلب تصميم موقع ============ */
+(function(){
+  /* وجهة الطلبات: FormSubmit يرسل الطلب إلى البريد (فعّله مرة واحدة عند أول إرسال) */
+  var FORM_EMAIL = "eng.waleedf.ksa@gmail.com";
+  var FORM_ENDPOINT = "https://formsubmit.co/ajax/" + FORM_EMAIL;   /* بدون مرفقات */
+  var FORM_POST_URL = "https://formsubmit.co/" + FORM_EMAIL;        /* مع مرفقات (إرسال عادي، الـ AJAX لا يدعم الملفات) */
+  var MAX_FILES = 5, MAX_TOTAL = 5 * 1024 * 1024;
+
+  var form = document.getElementById("ws-form"); if(!form) return;
+  var done = document.getElementById("ws-done"), doneP = document.getElementById("ws-done-p");
+  var statusEl = document.getElementById("ws-status"), submitBtn = document.getElementById("ws-submit");
+  var fName = document.getElementById("ws-name"), fEmail = document.getElementById("ws-email"),
+      fPhone = document.getElementById("ws-phone"), fService = document.getElementById("ws-service"),
+      fDetails = document.getElementById("ws-details"), fHp = document.getElementById("ws-hp");
+  var fileInput = document.getElementById("ws-files"), fileSum = document.getElementById("ws-file-sum"),
+      fileList = document.getElementById("ws-files-list"), drop = document.getElementById("ws-drop");
+
+  var files = [], sending = false, lastStatus = null, lastErr = "";
+  function lang(){ return document.documentElement.lang === "en" ? "en" : "ar"; }
+
+  var T = {
+    ar:{
+      noFiles:"لم يتم اختيار ملفات", files:function(n){ return n + (n===1?" ملف":" ملفات"); },
+      remove:"إزالة الملف",
+      name:"أدخل اسمك من فضلك.", email:"أدخل بريداً إلكترونياً صحيحاً.", phone:"رقم الجوال غير صحيح.",
+      service:"اختر الخدمة المطلوبة.", details:"اكتب تفاصيل المشروع (10 أحرف على الأقل).",
+      tooMany:"الحد الأقصى 5 ملفات.", tooBig:"حجم المرفقات يتجاوز 5 ميجابايت.",
+      fail:"تعذّر إرسال الطلب الآن. حاول مرة أخرى أو تواصل معي عبر واتساب.", wa:"فتح واتساب",
+      sending:"جارٍ الإرسال...", send:"إرسال الطلب",
+      mail:"إرسال الطلب عبر البريد", detail:"السبب: ",
+      doneOk:"وصلني طلبك بنجاح وسأتواصل معك قريبًا عبر البريد الإلكتروني أو واتساب.",
+      doneNoFiles:"شكراً لك! وصلني طلبك، لكن تعذّر رفع المرفقات. سأتواصل معك لاستلامها.",
+      subject:"طلب تصميم موقع جديد | New website request — "
+    },
+    en:{
+      noFiles:"No files selected", files:function(n){ return n + (n===1?" file":" files"); },
+      remove:"Remove file",
+      name:"Please enter your name.", email:"Please enter a valid email address.", phone:"The phone number looks invalid.",
+      service:"Please choose a service.", details:"Please describe your project (at least 10 characters).",
+      tooMany:"You can attach up to 5 files.", tooBig:"Attachments exceed 5 MB.",
+      fail:"Couldn't send your request right now. Please try again or reach me on WhatsApp.", wa:"Open WhatsApp",
+      sending:"Sending...", send:"Send request",
+      mail:"Send by email instead", detail:"Reason: ",
+      doneOk:"Your request reached me successfully. I'll get back to you soon by email or WhatsApp.",
+      doneNoFiles:"Thank you! Your request reached me, but the attachments couldn't be uploaded. I'll contact you to receive them.",
+      subject:"طلب تصميم موقع جديد | New website request — "
+    }
+  };
+  var SERVICE_NAME = {personal:"موقع شخصي (Personal website)", "personal-logo":"موقع شخصي + شعار (Personal website + logo)"};
+
+  /* ---------- الحالة ---------- */
+  function setStatus(kind, key, withWa, detail){
+    lastStatus = kind ? {kind:kind, key:key, wa:!!withWa, detail:detail||""} : null;
+    renderStatus();
+  }
+  function mailtoHref(){
+    var body = "الاسم: " + fName.value.trim() + "\nالبريد: " + fEmail.value.trim() + "\nالجوال: " + (fPhone.value.trim() || "-") +
+      "\nالخدمة: " + (SERVICE_NAME[fService.value] || fService.value) + "\n\nتفاصيل المشروع:\n" + fDetails.value.trim();
+    return "mailto:" + FORM_EMAIL + "?subject=" + encodeURIComponent(T.ar.subject + fName.value.trim()) + "&body=" + encodeURIComponent(body);
+  }
+  function renderStatus(){
+    statusEl.className = "ws-status" + (lastStatus ? " " + lastStatus.kind : "");
+    statusEl.textContent = "";
+    if(!lastStatus) return;
+    var t = T[lang()];
+    statusEl.appendChild(document.createTextNode(t[lastStatus.key]));
+    if(lastStatus.wa && typeof window.openWaModal === "function"){
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "ws-wa"; b.textContent = t.wa;
+      b.addEventListener("click", function(){ window.openWaModal(); });
+      statusEl.appendChild(b);
+    }
+    if(lastStatus.key === "fail"){
+      var m = document.createElement("a");
+      m.className = "ws-wa"; m.href = mailtoHref(); m.textContent = t.mail;
+      statusEl.appendChild(m);
+      if(lastStatus.detail){
+        var d = document.createElement("div");
+        d.dir = "ltr"; d.style.cssText = "margin-top:6px;font-size:.72rem;opacity:.8;word-break:break-word";
+        d.textContent = lastStatus.detail;
+        statusEl.appendChild(d);
+      }
+    }
+  }
+
+  /* ---------- الملفات ---------- */
+  function fmt(b){ return b >= 1048576 ? (b/1048576).toFixed(1) + " MB" : Math.max(1, Math.round(b/1024)) + " KB"; }
+  function total(){ return files.reduce(function(s,f){ return s + f.size; }, 0); }
+  function renderFiles(){
+    var t = T[lang()];
+    fileSum.innerHTML = files.length ? t.files(files.length) + ' · <bdi dir="ltr">' + fmt(total()) + '</bdi>' : t.noFiles;
+    fileList.innerHTML = "";
+    files.forEach(function(f, i){
+      var c = document.createElement("span"); c.className = "ws-fchip";
+      var n = document.createElement("b"); n.textContent = f.name; n.title = f.name;
+      var s = document.createElement("em"); s.setAttribute("dir","ltr"); s.textContent = fmt(f.size);
+      var x = document.createElement("button"); x.type = "button"; x.setAttribute("aria-label", t.remove + ": " + f.name);
+      x.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>';
+      x.addEventListener("click", function(){ files.splice(i,1); renderFiles(); setStatus(null); });
+      c.appendChild(n); c.appendChild(s); c.appendChild(x); fileList.appendChild(c);
+    });
+  }
+  function addFiles(list){
+    var err = null;
+    Array.prototype.forEach.call(list, function(f){
+      var dup = files.some(function(x){ return x.name === f.name && x.size === f.size && x.lastModified === f.lastModified; });
+      if(dup) return;
+      if(files.length >= MAX_FILES){ err = "tooMany"; return; }
+      if(total() + f.size > MAX_TOTAL){ err = "tooBig"; return; }
+      files.push(f);
+    });
+    renderFiles();
+    if(err) setStatus("err", err); else setStatus(null);
+  }
+  fileInput.addEventListener("change", function(){ addFiles(fileInput.files); fileInput.value = ""; });
+  ["dragenter","dragover"].forEach(function(ev){ drop.addEventListener(ev, function(e){ e.preventDefault(); drop.classList.add("drag"); }); });
+  ["dragleave","drop"].forEach(function(ev){ drop.addEventListener(ev, function(e){ e.preventDefault(); drop.classList.remove("drag"); }); });
+  drop.addEventListener("drop", function(e){ if(e.dataTransfer && e.dataTransfer.files) addFiles(e.dataTransfer.files); });
+
+  /* ---------- التحقق ---------- */
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/, PHONE_RE = /^[+\d\s().-]{7,24}$/;
+  function validate(){
+    var checks = [
+      [fName,    fName.value.trim().length >= 2, "name"],
+      [fEmail,   EMAIL_RE.test(fEmail.value.trim()), "email"],
+      [fPhone,   !fPhone.value.trim() || PHONE_RE.test(fPhone.value.trim()), "phone"],
+      [fService, !!fService.value, "service"],
+      [fDetails, fDetails.value.trim().length >= 10, "details"]
+    ];
+    var first = null;
+    checks.forEach(function(c){
+      var bad = !c[1];
+      if(bad) c[0].setAttribute("aria-invalid", "true"); else c[0].removeAttribute("aria-invalid");
+      if(bad && !first) first = c;
+    });
+    if(first){ setStatus("err", first[2]); first[0].focus(); return false; }
+    return true;
+  }
+  [fName, fEmail, fPhone, fService, fDetails].forEach(function(el){
+    el.addEventListener("input", function(){ el.removeAttribute("aria-invalid"); if(lastStatus && lastStatus.kind==="err") setStatus(null); });
+    el.addEventListener("change", function(){ el.removeAttribute("aria-invalid"); });
+  });
+
+  /* ---------- الإرسال ---------- */
+  function fields(){
+    var o = {
+      "Name": fName.value.trim(),
+      "email": fEmail.value.trim(),
+      "Phone_WhatsApp": fPhone.value.trim() || "-",
+      "Service": SERVICE_NAME[fService.value] || fService.value,
+      "Project_details": fDetails.value.trim(),
+      "Visitor_language": lang() === "en" ? "English" : "العربية",
+      "_subject": T.ar.subject + fName.value.trim(),
+      "_replyto": fEmail.value.trim(),
+      "_template": "table",
+      "_captcha": "false"
+    };
+    return o;
+  }
+  /* إرسال بدون مرفقات عبر AJAX */
+  function postAjax(note){
+    var fd = new FormData(), o = fields();
+    Object.keys(o).forEach(function(k){ fd.append(k, o[k]); });
+    if(note) fd.append("Attachments_note", note);
+    return fetch(FORM_ENDPOINT, {method:"POST", body:fd, headers:{"Accept":"application/json"}})
+      .then(function(r){
+        return r.json().catch(function(){ return {}; }).then(function(d){
+          var ok = r.ok && (d.success === true || d.success === "true");
+          if(!ok) lastErr = (d && d.message) ? String(d.message) : ("HTTP " + r.status);
+          return ok;
+        });
+      })
+      .catch(function(err){ lastErr = "Network: " + (err && err.message ? err.message : err); return false; });
+  }
+  /* إرسال مع مرفقات: نموذج عادي multipart داخل iframe مخفي */
+  function postFiles(){
+    return new Promise(function(resolve){
+      var name = "ws-frame-" + Date.now();
+      var ifr = document.createElement("iframe");
+      ifr.name = name; ifr.setAttribute("aria-hidden","true"); ifr.tabIndex = -1;
+      ifr.style.cssText = "position:absolute;width:0;height:0;border:0;visibility:hidden";
+      var f = document.createElement("form");
+      f.method = "POST"; f.action = FORM_POST_URL; f.enctype = "multipart/form-data"; f.target = name;
+      f.style.display = "none";
+      var o = fields();
+      Object.keys(o).forEach(function(k){
+        var i = document.createElement("input"); i.type = "hidden"; i.name = k; i.value = o[k]; f.appendChild(i);
+      });
+      try{
+        var dt = new DataTransfer();
+        files.forEach(function(x){ dt.items.add(x); });
+        var fi = document.createElement("input"); fi.type = "file"; fi.name = "attachment"; fi.multiple = true;
+        fi.files = dt.files; f.appendChild(fi);
+      }catch(err){ resolve(false); return; }
+      var submitted = false, finished = false;
+      function end(ok){
+        if(finished) return; finished = true;
+        setTimeout(function(){ try{ document.body.removeChild(ifr); document.body.removeChild(f); }catch(e){} }, 500);
+        resolve(ok);
+      }
+      ifr.addEventListener("load", function(){ if(submitted) end(true); });
+      setTimeout(function(){ end(false); }, 60000);
+      document.body.appendChild(ifr); document.body.appendChild(f);
+      submitted = true; f.submit();
+    });
+  }
+  function filesNote(){
+    return "Visitor selected but upload failed: " + files.map(function(f){ return f.name + " (" + fmt(f.size) + ")"; }).join(", ");
+  }
+  function busy(on){
+    sending = on; submitBtn.disabled = on; submitBtn.classList.toggle("busy", on);
+    document.getElementById("ws-submit-t").textContent = T[lang()][on ? "sending" : "send"];
+  }
+  var okOv = document.getElementById("ws-ok"), okP = document.getElementById("ws-ok-p"), okLast = null;
+  function openOk(){
+    okLast = document.activeElement;
+    okOv.classList.add("open"); okOv.setAttribute("aria-hidden","false"); document.body.style.overflow = "hidden";
+    document.getElementById("ws-ok-close").focus();
+  }
+  function closeOk(){
+    okOv.classList.remove("open"); okOv.setAttribute("aria-hidden","true"); document.body.style.overflow = "";
+    if(okLast && okLast.focus) try{ okLast.focus({preventScroll:true}); }catch(e){}
+  }
+  document.getElementById("ws-ok-close").addEventListener("click", closeOk);
+  document.getElementById("ws-ok-x").addEventListener("click", closeOk);
+  okOv.addEventListener("click", function(e){ if(e.target === okOv) closeOk(); });
+  document.addEventListener("keydown", function(e){ if(e.key === "Escape" && okOv.classList.contains("open")) closeOk(); });
+  function showDone(msgKey){
+    okP.setAttribute("data-key", msgKey); okP.textContent = T[lang()][msgKey];
+    openOk();
+  }
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    if(sending) return;
+    if(fHp.value){ showDone("doneOk"); return; }          /* مصيدة البوتات */
+    if(!validate()) return;
+    setStatus(null); busy(true);
+    var hadFiles = files.length > 0;
+    var run = hadFiles
+      ? postFiles().then(function(ok){
+          if(ok) return {ok:true, key:"doneOk"};
+          return postAjax(filesNote()).then(function(ok2){ return ok2 ? {ok:true, key:"doneNoFiles"} : {ok:false}; });
+        })
+      : postAjax().then(function(ok){ return ok ? {ok:true, key:"doneOk"} : {ok:false}; });
+    run.then(function(res){
+      busy(false);
+      if(res.ok){
+        showDone(res.key);
+        form.reset(); files = []; renderFiles(); setStatus(null);
+        fService.selectedIndex = 0;
+      } else {
+        setStatus("err", "fail", true, lastErr);
+      }
+    });
+  });
+  document.getElementById("ws-again").addEventListener("click", function(){
+    done.hidden = true; form.hidden = false; fName.focus({preventScroll:true});
+  });
+
+  /* ---------- اللغة ---------- */
+  function onLang(){
+    var ar = lang() === "ar";
+    document.querySelectorAll("#webdesign [data-ar-ph]").forEach(function(el){
+      el.placeholder = el.getAttribute(ar ? "data-ar-ph" : "data-en-ph");
+    });
+    renderFiles(); renderStatus();
+    okP.textContent = T[lang()][okP.getAttribute("data-key") || "doneOk"];
+    document.getElementById("ws-submit-t").textContent = T[lang()][sending ? "sending" : "send"];
+  }
+  new MutationObserver(onLang).observe(document.documentElement, {attributes:true, attributeFilter:["lang"]});
+  onLang();
+})();
+</script>
+
 </body>
 </html>
